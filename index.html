@@ -9,6 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* FIX: Prevent horizontal scroll */
+        body, html {
+            overflow-x: hidden;
+        }
+        
         /* НОВЫЕ СТИЛИ ДЛЯ АНИМАЦИИ ЗАГРУЗКИ */
         .loader {
             position: fixed;
@@ -1083,9 +1088,12 @@
                 font-size: 2.8rem;
             }
             
-            /* Добавлено: бургер меню */
+            /* Фиксируем бургер в правом верхнем углу */
             .burger {
                 display: block;
+                position: fixed;
+                right: 20px;
+                top: 25px;
             }
             
             .hero-content .btn {
@@ -1124,11 +1132,22 @@
                 max-width: 100%;
                 margin: 0 auto;
             }
+
+            /* Центрируем контент на мобильных */
+            .hero-content, .about-content, .contact-grid, .footer-content {
+                padding: 0 15px;
+                text-align: center;
+            }
+            
+            .btn {
+                display: block;
+                margin: 15px auto;
+            }
         }
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
@@ -1137,6 +1156,8 @@
             
             .section-title {
                 font-size: 2.2rem;
+                padding: 0 10px;
+                word-wrap: break-word;
             }
             
             .btn {
@@ -1160,6 +1181,7 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                width: 100%;
             }
             
             .feature {
@@ -1255,8 +1277,8 @@
                 align-items: center;
             }
             
-            .contact-item {
-                width: 90%;
+            .product-image {
+                height: 250px;
             }
         }
     </style>
@@ -1512,9 +1534,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2023 Blossom Luxe. Все права защищены.
-            </div>
+            
         </footer>
     </div>
 
