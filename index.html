@@ -1143,6 +1143,25 @@
                 display: block;
                 margin: 15px auto;
             }
+            
+            /* Разбиваем логотип на две строки */
+            .logo {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 1.8rem;
+            }
+            
+            .logo .logo-text {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.1;
+            }
+            
+            .logo-icon {
+                margin-right: 0;
+                margin-bottom: 5px;
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1323,7 +1342,10 @@
                 <div class="logo-icon">
                     <i class="fas fa-spa"></i>
                 </div>
-                Blossom Luxe
+                <div class="logo-text">
+                    <span>Blossom</span>
+                    <span>Luxe</span>
+                </div>
             </a>
             <div class="nav-links">
                 <a href="#">Главная</a>
@@ -1534,7 +1556,7 @@
                     </ul>
                 </div>
             </div>
-            
+          
         </footer>
     </div>
 
