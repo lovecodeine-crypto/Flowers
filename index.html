@@ -1143,25 +1143,6 @@
                 display: block;
                 margin: 15px auto;
             }
-            
-            /* Разбиваем логотип на две строки только для навигации */
-            .logo {
-                flex-direction: column;
-                align-items: flex-start;
-                font-size: 1.8rem;
-            }
-            
-            .logo .logo-text {
-                display: flex;
-                flex-direction: column;
-                line-height: 1.1;
-            }
-            
-            .logo-icon {
-                margin-right: 0;
-                margin-bottom: 5px;
-                font-size: 1.8rem;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1221,6 +1202,10 @@
             
             .logo {
                 font-size: 1.8rem;
+            }
+            
+            .loader-logo {
+                font-size: 42px;
             }
             
             .testimonial {
@@ -1296,9 +1281,16 @@
                 height: 250px;
             }
             
-            /* Корректировка размера логотипа в анимации загрузки */
-            .loader-logo {
-                font-size: 42px;
+            /* Перенос слова Luxe на новую строку */
+            .mobile-break {
+                display: block;
+                width: 100%;
+                height: 0;
+                content: ' ';
+            }
+            
+            .loader-logo .space {
+                display: none;
             }
         }
     </style>
@@ -1315,7 +1307,8 @@
                 <span>s</span>
                 <span>o</span>
                 <span>m</span>
-                <span>&nbsp;</span>
+                <span class="space">&nbsp;</span>
+                <br class="mobile-break">
                 <span>L</span>
                 <span>u</span>
                 <span>x</span>
@@ -1343,10 +1336,7 @@
                 <div class="logo-icon">
                     <i class="fas fa-spa"></i>
                 </div>
-                <div class="logo-text">
-                    <span>Blossom</span>
-                    <span>Luxe</span>
-                </div>
+                Blossom Luxe
             </a>
             <div class="nav-links">
                 <a href="#">Главная</a>
