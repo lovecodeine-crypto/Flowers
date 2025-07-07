@@ -1204,10 +1204,6 @@
                 font-size: 1.8rem;
             }
             
-            .loader-logo {
-                font-size: 42px;
-            }
-            
             .testimonial {
                 padding: 30px 20px;
             }
@@ -1280,6 +1276,18 @@
             .product-image {
                 height: 250px;
             }
+            
+            /* ИЗМЕНЕНИЯ ДЛЯ АНИМАЦИИ ЗАГРУЗКИ НА МОБИЛЬНЫХ */
+            .loader-logo {
+                font-size: 42px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .loader-logo span {
+                display: inline-block;
+            }
         }
     </style>
 </head>
@@ -1295,7 +1303,7 @@
                 <span>s</span>
                 <span>o</span>
                 <span>m</span>
-                <span>&nbsp;</span>
+                <br class="mobile-break"> <!-- Добавлен перенос строки для мобильных -->
                 <span>L</span>
                 <span>u</span>
                 <span>x</span>
@@ -1534,7 +1542,7 @@
                     </ul>
                 </div>
             </div>
-            
+          
         </footer>
     </div>
 
