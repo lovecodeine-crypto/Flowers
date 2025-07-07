@@ -1143,6 +1143,25 @@
                 display: block;
                 margin: 15px auto;
             }
+            
+            /* Разбиваем логотип на две строки только для навигации */
+            .logo {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 1.8rem;
+            }
+            
+            .logo .logo-text {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.1;
+            }
+            
+            .logo-icon {
+                margin-right: 0;
+                margin-bottom: 5px;
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1277,16 +1296,9 @@
                 height: 250px;
             }
             
-            /* ИЗМЕНЕНИЯ ДЛЯ АНИМАЦИИ ЗАГРУЗКИ НА МОБИЛЬНЫХ */
+            /* Корректировка размера логотипа в анимации загрузки */
             .loader-logo {
                 font-size: 42px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .loader-logo span {
-                display: inline-block;
             }
         }
     </style>
@@ -1303,7 +1315,7 @@
                 <span>s</span>
                 <span>o</span>
                 <span>m</span>
-                <br class="mobile-break"> <!-- Добавлен перенос строки для мобильных -->
+                <span>&nbsp;</span>
                 <span>L</span>
                 <span>u</span>
                 <span>x</span>
@@ -1331,7 +1343,10 @@
                 <div class="logo-icon">
                     <i class="fas fa-spa"></i>
                 </div>
-                Blossom Luxe
+                <div class="logo-text">
+                    <span>Blossom</span>
+                    <span>Luxe</span>
+                </div>
             </a>
             <div class="nav-links">
                 <a href="#">Главная</a>
@@ -1542,7 +1557,7 @@
                     </ul>
                 </div>
             </div>
-          
+           
         </footer>
     </div>
 
