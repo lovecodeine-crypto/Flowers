@@ -48,6 +48,12 @@
             transition: all 0.3s ease;
         }
         
+        /* ИЗМЕНЕНИЕ: Создаем контейнеры для слов */
+        .loader-word {
+            display: block;
+            text-align: center;
+        }
+        
         @keyframes letterAppear {
             0% {
                 opacity: 0;
@@ -1123,6 +1129,22 @@
                 max-width: 100%;
                 margin: 0 auto;
             }
+            
+            /* ИЗМЕНЕНИЕ: Стили для логотипа на мобильных */
+            .loader-logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .loader-word {
+                display: block;
+                text-align: center;
+            }
+            
+            .loader-logo .second-word span {
+                animation-delay: calc(0.12s * 7 + 0.12s); /* Задержка для второго слова */
+            }
         }
 
         @media (max-width: 576px) {
@@ -1202,18 +1224,22 @@
     <div class="loader" id="loader">
         <div class="loader-container">
             <div class="loader-logo" id="loader-logo">
-                <span>B</span>
-                <span>l</span>
-                <span>o</span>
-                <span>s</span>
-                <span>s</span>
-                <span>o</span>
-                <span>m</span>
-                <span>&nbsp;</span>
-                <span>L</span>
-                <span>u</span>
-                <span>x</span>
-                <span>e</span>
+                <!-- ИЗМЕНЕНИЕ: Разделили лого на два слова -->
+                <div class="loader-word first-word">
+                    <span>B</span>
+                    <span>l</span>
+                    <span>o</span>
+                    <span>s</span>
+                    <span>s</span>
+                    <span>o</span>
+                    <span>m</span>
+                </div>
+                <div class="loader-word second-word">
+                    <span>L</span>
+                    <span>u</span>
+                    <span>x</span>
+                    <span>e</span>
+                </div>
             </div>
         </div>
     </div>
@@ -1448,9 +1474,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2023 Blossom Luxe. Все права защищены.
-            </div>
+          
         </footer>
     </div>
 
